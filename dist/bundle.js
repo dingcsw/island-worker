@@ -31311,13 +31311,13 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container island-container' },
+	        { className: 'container-fluid island-container' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'row form-group island-form' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'input-group col-10' },
+	            { className: 'input-group col-10 col-sm-10' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'input-group-addon' },
@@ -31389,7 +31389,7 @@
 	          { className: 'row' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col-12 island-team-info' },
+	            { className: 'col-12 col-sm-12 island-team-info' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'island-team-info-inner' },
