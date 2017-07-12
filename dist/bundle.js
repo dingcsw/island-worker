@@ -30787,7 +30787,7 @@
 
 
 	// module
-	exports.push([module.id, ".island-container {\n  padding: 10px;\n}\n\n.island-action-select {\n  width: 120px;\n}\n\n.island-form {\n  margin-top: 10px;\n}\n\n.island-team-info {\n  padding: 10px;\n}\n\n.island-team-info-inner {\n  padding: 10px;\n  background-color: #EEEEEE;\n  border-radius: 4px;\n}\n\nbody { \n  font: normal 100% Helvetica, Arial, sans-serif; \n}\n", ""]);
+	exports.push([module.id, ".island-container {\n  padding: 10px;\n}\n\n.island-action-select {\n  width: 120px;\n}\n\n.island-form {\n  margin-top: 10px;\n}\n\n.island-team-info {\n  padding: 10px;\n}\n\n.island-team-info-inner {\n  padding: 10px;\n  background-color: #EEEEEE;\n  border-radius: 4px;\n}\n\nbody { \n  font: normal 100% Helvetica, Arial, sans-serif; \n}\n\n.container{\n  width: 100%;\n  max-width: 800px;\n  margin: 0 auto;\n}\n", ""]);
 
 	// exports
 
