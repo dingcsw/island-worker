@@ -31311,98 +31311,89 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'container-fluid' },
 	        _react2.default.createElement(
 	          'div',
-	          { style: { 'font-size': '500%' } },
-	          '123132'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container-fluid' },
+	          { className: 'row form-group island-form' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'row form-group island-form' },
+	            { className: 'input-group col-10 col-sm-10' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-group col-10 col-sm-10' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'input-group-addon' },
-	                'team'
-	              ),
-	              _react2.default.createElement('input', {
-	                type: 'text',
-	                className: 'form-control',
-	                id: 'formInput1',
-	                ref: function ref(input) {
-	                  _this2.inputValue1 = input;
-	                } }),
-	              _react2.default.createElement(
-	                'select',
-	                {
-	                  className: 'custom-select island-action-select',
-	                  style: formSelectStyle,
-	                  onChange: this.handleSelectChange,
-	                  value: formSelectValue,
-	                  id: 'formSelect'
-	                },
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'kill' },
-	                  'kill'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'money' },
-	                  'money'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'occupy' },
-	                  'occupy'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'shutDown' },
-	                  'shut down'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'purged' },
-	                  'purged'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'rescue' },
-	                  'rescue'
-	                )
-	              ),
-	              showMore
+	              { className: 'input-group-addon' },
+	              'team'
 	            ),
+	            _react2.default.createElement('input', {
+	              type: 'text',
+	              className: 'form-control',
+	              id: 'formInput1',
+	              ref: function ref(input) {
+	                _this2.inputValue1 = input;
+	              } }),
 	            _react2.default.createElement(
-	              'button',
+	              'select',
 	              {
-	                type: 'submit',
-	                className: 'btn btn-primary btn-submit',
-	                onClick: function onClick(e) {
-	                  return _this2.handleCheck(e);
-	                }
+	                className: 'custom-select island-action-select',
+	                style: formSelectStyle,
+	                onChange: this.handleSelectChange,
+	                value: formSelectValue,
+	                id: 'formSelect'
 	              },
-	              'check'
-	            )
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'kill' },
+	                'kill'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'money' },
+	                'money'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'occupy' },
+	                'occupy'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'shutDown' },
+	                'shut down'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'purged' },
+	                'purged'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'rescue' },
+	                'rescue'
+	              )
+	            ),
+	            showMore
 	          ),
-	          showInfo === '' ? '' : _react2.default.createElement(
+	          _react2.default.createElement(
+	            'button',
+	            {
+	              type: 'submit',
+	              className: 'btn btn-primary btn-submit',
+	              onClick: function onClick(e) {
+	                return _this2.handleCheck(e);
+	              }
+	            },
+	            'check'
+	          )
+	        ),
+	        showInfo === '' ? '' : _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
+	            { className: 'col-12 col-sm-12 island-team-info' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'col-12 col-sm-12 island-team-info' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'island-team-info-inner' },
-	                showInfo
-	              )
+	              { className: 'island-team-info-inner' },
+	              showInfo
 	            )
 	          )
 	        )
