@@ -30787,7 +30787,7 @@
 
 
 	// module
-	exports.push([module.id, ".island-container {\n  padding: 10px;\n}\n\n.island-action-select {\n  width: 120px;\n}\n\n.island-form {\n  margin-top: 10px;\n}\n\n.island-team-info {\n  padding: 10px;\n}\n\n.island-team-info-inner {\n  padding: 10px;\n  background-color: #EEEEEE;\n  border-radius: 4px;\n}", ""]);
+	exports.push([module.id, ".island-container {\n  padding: 10px;\n}\n\n.island-action-select {\n  width: 120px;\n}\n\n.island-form {\n  margin-top: 10px;\n}\n\n.island-team-info {\n  padding: 10px;\n}\n\n.island-team-info-inner {\n  padding: 10px;\n  background-color: #EEEEEE;\n  border-radius: 4px;\n}\n\nbody { \n  font: normal 100% Helvetica, Arial, sans-serif; \n}\n", ""]);
 
 	// exports
 
@@ -31311,7 +31311,7 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container-fluid island-container' },
+	        { className: 'container island-container' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'row form-group island-form' },
