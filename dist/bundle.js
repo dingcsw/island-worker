@@ -30787,7 +30787,7 @@
 
 
 	// module
-	exports.push([module.id, ".island-container {\n  padding: 10px;\n}\n\n.island-action-select {\n  width: 120px;\n}\n\n.island-form {\n  margin-top: 10px;\n}\n\n.island-team-info {\n  padding: 10px;\n}\n\n.island-team-info-inner {\n  padding: 10px;\n  background-color: #EEEEEE;\n  border-radius: 4px;\n}\n", ""]);
+	exports.push([module.id, "", ""]);
 
 	// exports
 
@@ -31289,51 +31289,91 @@
 
 	      var showMore = formSelectValue === 'purged' ? '' : [_react2.default.createElement(
 	        'div',
-	        { className: 'input-group-addon' },
+	        {
+	          className: 'input-group-addon',
+	          style: {
+	            'fontSize': '250%',
+	            'padding': '2.5%',
+	            'width': '50%',
+	            'borderTopLeftRadius': '0px' } },
 	        formAddon
 	      ), _react2.default.createElement('input', {
 	        type: 'text',
 	        className: 'form-control',
+	        style: {
+	          'fontSize': '250%',
+	          'padding': '2.5%',
+	          'width': '50%',
+	          'textAlign': 'center',
+	          'borderTopRightRadius': '0px' },
 	        id: 'formInput2',
 	        ref: function ref(input) {
 	          _this2.inputValue2 = input;
 	        },
 	        placeholder: formInput2PlaceHolder })];
 	      var formSelectStyle = formSelectValue === 'purged' ? {
-	        'borderBottomLeftRadius': '0px',
+	        'width': '100%',
+	        'height': '100%',
+	        'padding': '2.5%',
+	        'fontSize': '250%',
+	        'textAlignLast': 'center',
 	        'borderTopLeftRadius': '0px',
+	        'borderTopRightRadius': '0px',
 	        'borderLeftWidth': '0px'
 	      } : {
-	        'borderRadius': '0px',
-	        'borderLeftWidth': '0px',
-	        'borderRightWidth': '0px'
+	        'width': '100%',
+	        'height': '100%',
+	        'padding': '2.5%',
+	        'fontSize': '250%',
+	        'textAlignLast': 'center',
+	        'borderRadius': '0px'
 	      };
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container-fluid' },
+	        { className: 'container', style: {} },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'row form-group island-form' },
+	          { className: 'row', style: { 'marginTop': '5%' } },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'input-group col-10 col-sm-10' },
+	            { className: 'input-group col-12' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-group-addon' },
+	              {
+	                className: 'input-group-addon',
+	                style: {
+	                  'fontSize': '250%',
+	                  'padding': '2.5%',
+	                  'width': '50%',
+	                  'borderBottomLeftRadius': '0px' } },
 	              'team'
 	            ),
 	            _react2.default.createElement('input', {
 	              type: 'text',
 	              className: 'form-control',
+	              style: {
+	                'fontSize': '250%',
+	                'padding': '2.5%',
+	                'width': '50%',
+	                'textAlign': 'center',
+	                'borderBottomRightRadius': '0px' },
 	              id: 'formInput1',
 	              ref: function ref(input) {
 	                _this2.inputValue1 = input;
-	              } }),
+	              } })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'input-group col-12' },
 	            _react2.default.createElement(
 	              'select',
 	              {
-	                className: 'custom-select island-action-select',
+	                className: 'custom-select',
 	                style: formSelectStyle,
 	                onChange: this.handleSelectChange,
 	                value: formSelectValue,
@@ -31369,14 +31409,27 @@
 	                { value: 'rescue' },
 	                'rescue'
 	              )
-	            ),
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'input-group col-12' },
 	            showMore
 	          ),
 	          _react2.default.createElement(
 	            'button',
 	            {
 	              type: 'submit',
-	              className: 'btn btn-primary btn-submit',
+	              className: 'btn btn-primary',
+	              style: {
+	                'fontSize': '250%',
+	                'padding': '2.5%',
+	                'marginTop': '2.5%',
+	                'alignContent': 'right' },
 	              onClick: function onClick(e) {
 	                return _this2.handleCheck(e);
 	              }
@@ -31389,7 +31442,7 @@
 	          { className: 'row' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col-12 col-sm-12 island-team-info' },
+	            { className: 'col-12' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'island-team-info-inner' },
