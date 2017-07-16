@@ -31680,7 +31680,7 @@
 	              if (this.inputValue1.value === '' || this.inputValue2.value === '') return;
 	              var _v7 = this.inputValue1.value;
 	              var _v8 = this.inputValue2.value;
-	              if (this.props.teams[_v8]['jail'] !== 'needed') p;
+	              if (this.props.teams[_v8]['jail'] !== 'needed') return;
 
 	              var _money = this.props.teams[_v7]['money'];
 	              var _earned = this.props.teams[_v7]['earned'];
@@ -31768,6 +31768,175 @@
 	              )];
 	              this.setState({ showInfo: _res5 });
 	            }
+	            /****************************/
+	            /*****      purged      *****/
+	            /****************************/
+	            else if (this.state.formSelectValue === 'purged') {
+	                if (this.inputValue1.value === '') return;
+	                var _v9 = this.inputValue1.value;
+	                if (this.props.teams[_v9]['life'] !== 0) return;
+
+	                var _money2 = this.props.teams[_v9]['money'];
+	                var _newData7 = { 'money': _money2 - 1000, 'jail': 'free' };
+	                var _res6 = [_react2.default.createElement(
+	                  'div',
+	                  { className: 'col-12' },
+	                  _react2.default.createElement(
+	                    'table',
+	                    { className: 'table', style: { 'fontSize': '250%' } },
+	                    _react2.default.createElement(
+	                      'thead',
+	                      null,
+	                      _react2.default.createElement(
+	                        'tr',
+	                        null,
+	                        _react2.default.createElement('th', null),
+	                        _react2.default.createElement(
+	                          'th',
+	                          null,
+	                          'Team ',
+	                          _v9,
+	                          ' will be set free.'
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'tbody',
+	                      null,
+	                      _react2.default.createElement(
+	                        'tr',
+	                        null,
+	                        _react2.default.createElement(
+	                          'th',
+	                          { scope: 'row' },
+	                          '\u91D1\u9322'
+	                        ),
+	                        _react2.default.createElement(
+	                          'td',
+	                          null,
+	                          _money2,
+	                          ' \u2192 ',
+	                          _money2 - 1000
+	                        )
+	                      )
+	                    )
+	                  )
+	                ), _react2.default.createElement(
+	                  'button',
+	                  {
+	                    type: 'submit',
+	                    className: 'btn btn-primary',
+	                    style: {
+	                      'fontSize': '250%',
+	                      'padding': '2.5%',
+	                      'marginTop': '2.5%',
+	                      'marginLeft': '80%',
+	                      'width': '18%',
+	                      'alignContent': 'right' },
+	                    onClick: function onClick() {
+	                      _this3.props.modifyTeamData(_newData7, _v9);
+	                      _this3.setState({ showInfo: '' });
+	                      _this3.clearInputValues();
+	                    }
+	                  },
+	                  'apply'
+	                )];
+	                this.setState({ showInfo: _res6 });
+	              }
+	              /****************************/
+	              /*****      rescue      *****/
+	              /****************************/
+	              else if (this.state.formSelectValue === 'rescue') {
+	                  if (this.inputValue1.value === '') return;
+	                  if (this.inputValue2.value === '') return;
+	                  if (this.inputValue3.value === '') return;
+	                  var _v10 = this.inputValue1.value;
+	                  var _v11 = this.inputValue2.value;
+	                  var _v12 = this.inputValue3.value;
+	                  if (this.props.teams[_v11]['life'] !== 0) return;
+	                  if (this.props.teams[_v11]['jail'] !== 'in') return;
+
+	                  var _money3 = this.props.teams[_v10]['money'];
+	                  var money2 = this.props.teams[_v11]['money'];
+	                  var moneyNew1 = _money3 + 2000 - Number(_v12);
+	                  var _newData8 = { 'money': moneyNew1 };
+	                  var _newData9 = { 'jail': 'free' };
+	                  var _res7 = [_react2.default.createElement(
+	                    'div',
+	                    { className: 'col-12' },
+	                    _react2.default.createElement(
+	                      'table',
+	                      { className: 'table', style: { 'fontSize': '250%' } },
+	                      _react2.default.createElement(
+	                        'thead',
+	                        null,
+	                        _react2.default.createElement(
+	                          'tr',
+	                          null,
+	                          _react2.default.createElement('th', null),
+	                          _react2.default.createElement(
+	                            'th',
+	                            null,
+	                            'Team ',
+	                            _v10
+	                          ),
+	                          _react2.default.createElement(
+	                            'th',
+	                            null,
+	                            'Team ',
+	                            _v11
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'tbody',
+	                        null,
+	                        _react2.default.createElement(
+	                          'tr',
+	                          null,
+	                          _react2.default.createElement(
+	                            'th',
+	                            { scope: 'row' },
+	                            '\u91D1\u9322'
+	                          ),
+	                          _react2.default.createElement(
+	                            'td',
+	                            null,
+	                            _money3,
+	                            ' \u2192 ',
+	                            moneyNew1
+	                          ),
+	                          _react2.default.createElement(
+	                            'td',
+	                            null,
+	                            money2
+	                          )
+	                        )
+	                      )
+	                    )
+	                  ), _react2.default.createElement(
+	                    'button',
+	                    {
+	                      type: 'submit',
+	                      className: 'btn btn-primary',
+	                      style: {
+	                        'fontSize': '250%',
+	                        'padding': '2.5%',
+	                        'marginTop': '2.5%',
+	                        'marginLeft': '80%',
+	                        'width': '18%',
+	                        'alignContent': 'right' },
+	                      onClick: function onClick() {
+	                        _this3.props.modifyTeamData(_newData8, _v10);
+	                        _this3.props.modifyTeamData(_newData9, _v11);
+	                        _this3.setState({ showInfo: '' });
+	                        _this3.clearInputValues();
+	                      }
+	                    },
+	                    'apply'
+	                  )];
+	                  this.setState({ showInfo: _res7 });
+	                }
 	    }
 	  }, {
 	    key: 'render',
@@ -31824,6 +31993,49 @@
 	          'borderBottomRightRadius': '0px' },
 	        id: 'formInput3',
 	        placeholder: '+/-?',
+	        ref: function ref(input) {
+	          _this4.inputValue3 = input;
+	        } })] : formSelectValue === 'rescue' ? [_react2.default.createElement(
+	        'div',
+	        {
+	          className: 'input-group-addon',
+	          style: {
+	            'fontSize': '250%',
+	            'padding': '2.5%',
+	            'width': '20%',
+	            'borderBottomLeftRadius': '0px' } },
+	        'team'
+	      ), _react2.default.createElement('input', {
+	        type: 'text',
+	        className: 'form-control',
+	        style: {
+	          'fontSize': '250%',
+	          'padding': '2.5%',
+	          'width': '30%',
+	          'textAlign': 'center' },
+	        id: 'formInput1',
+	        ref: function ref(input) {
+	          _this4.inputValue1 = input;
+	        } }), _react2.default.createElement(
+	        'div',
+	        {
+	          className: 'input-group-addon',
+	          style: {
+	            'fontSize': '250%',
+	            'padding': '2.5%',
+	            'width': '20%' } },
+	        'cost'
+	      ), _react2.default.createElement('input', {
+	        type: 'text',
+	        className: 'form-control',
+	        style: {
+	          'fontSize': '250%',
+	          'padding': '2.5%',
+	          'width': '30%',
+	          'textAlign': 'center',
+	          'borderBottomRightRadius': '0px' },
+	        id: 'formInput3',
+	        placeholder: '0/3000',
 	        ref: function ref(input) {
 	          _this4.inputValue3 = input;
 	        } })] : [_react2.default.createElement(
