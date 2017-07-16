@@ -91,9 +91,15 @@
 	    return response;
 	  });
 	};
+	var modifyEnvData = function modifyEnvData(data) {
+	  return db.child('env').update(data, function (response) {
+	    return response;
+	  });
+	};
 	var actions = {
 	  modifyTeamData: modifyTeamData,
-	  modifyGarenaData: modifyGarenaData
+	  modifyGarenaData: modifyGarenaData,
+	  modifyEnvData: modifyEnvData
 	};
 
 	db.on('value', function (snapshot) {
@@ -31218,6 +31224,11 @@
 	    value: function handleCheck() {
 	      var _this3 = this;
 
+	      if (this.props.env.timing === 'daytime') {
+	        if (this.state.formSelectValue === 'kill' || this.state.formSelectValue === 'moneyGarena' || this.state.formSelectValue === 'occupy' || this.state.formSelectValue === 'shutDown') return;
+	      } else {
+	        if (this.state.formSelectValue === 'moneyMarket' || this.state.formSelectValue === 'purged' || this.state.formSelectValue === 'rescue') return;
+	      }
 	      /****************************/
 	      /*****       kill       *****/
 	      /****************************/
@@ -31770,6 +31781,10 @@
 	                  onClick: function onClick() {
 	                    _this3.props.modifyTeamData(_newData5, _v7);
 	                    _this3.props.modifyTeamData(_newData6, _v8);
+	                    if (_this3.props.env.jailTimestamp === 0) {
+	                      var d = new Date();
+	                      _this3.props.modifyEnvData({ 'jailTimestamp': d.getTime() });
+	                    }
 	                    _this3.setState({ showInfo: '' });
 	                    _this3.clearInputValues();
 	                  }
@@ -32168,7 +32183,12 @@
 	          } },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'row' },
+	          { className: 'row', style: {
+	              'paddingTop': '15px',
+	              'backgroundColor': 'white',
+	              'borderTopLeftRadius': '4px',
+	              'borderTopRightRadius': '4px'
+	            } },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'input-group col-12' },
@@ -32177,7 +32197,9 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'row' },
+	          { className: 'row', style: {
+	              'backgroundColor': 'white'
+	            } },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'input-group col-12' },
@@ -32190,41 +32212,52 @@
 	                value: formSelectValue,
 	                id: 'formSelect'
 	              },
-	              this.props.env.timing === 'daytime' ? [_react2.default.createElement(
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'moneyMarket' },
 	                'money (market)'
-	              ), _react2.default.createElement(
+	              ),
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'purged' },
 	                'purged'
-	              ), _react2.default.createElement(
+	              ),
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'rescue' },
 	                'rescue'
-	              )] : [_react2.default.createElement(
+	              ),
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'kill' },
 	                'kill'
-	              ), _react2.default.createElement(
+	              ),
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'moneyGarena' },
 	                'money (garena)'
-	              ), _react2.default.createElement(
+	              ),
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'occupy' },
 	                'occupy'
-	              ), _react2.default.createElement(
+	              ),
+	              _react2.default.createElement(
 	                'option',
 	                { value: 'shutDown' },
 	                'shut down'
-	              )]
+	              )
 	            )
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'row' },
+	          { className: 'row', style: {
+	              'paddingBottom': '15px',
+	              'backgroundColor': 'white',
+	              'borderBottomLeftRadius': '4px',
+	              'borderBottomRightRadius': '4px'
+	            } },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'input-group col-12' },
