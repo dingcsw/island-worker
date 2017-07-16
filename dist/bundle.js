@@ -31228,7 +31228,7 @@
 	        var kill1 = this.props.teams[v1]['kill'] + 1;
 	        var death2 = this.props.teams[v2]['death'] + 1;
 	        var earned1 = this.props.teams[v1]['earned'] + moneyChange1;
-	        var newData1 = { 'life': life1, 'money': money1, 'kill': kill1 };
+	        var newData1 = { 'life': life1, 'money': money1, 'kill': kill1, 'earned': earned1 };
 	        var newData2 = { 'life': life2, 'death': death2, 'jail': jail2 };
 
 	        var res = [_react2.default.createElement(
