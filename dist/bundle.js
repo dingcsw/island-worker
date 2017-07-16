@@ -32080,7 +32080,7 @@
 	            'fontSize': '250%',
 	            'padding': '2.5%',
 	            'width': '20%',
-	            'borderBottomLeftRadius': '0px' } },
+	            'borderTopLeftRadius': '0px' } },
 	        'team'
 	      ), _react2.default.createElement('input', {
 	        type: 'text',
@@ -32100,8 +32100,7 @@
 	          style: {
 	            'fontSize': '250%',
 	            'padding': '2.5%',
-	            'width': '20%',
-	            'borderBottomLeftRadius': '0px' } },
+	            'width': '20%' } },
 	        'life'
 	      ), _react2.default.createElement('input', {
 	        type: 'text',
@@ -32112,7 +32111,7 @@
 	          'width': '30%',
 	          'textAlign': 'center',
 	          'borderStyle': 'inset',
-	          'borderBottomRightRadius': '0px' },
+	          'borderTopRightRadius': '0px' },
 	        id: 'formInput3',
 	        placeholder: '+/-?',
 	        ref: function ref(input) {
