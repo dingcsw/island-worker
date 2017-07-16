@@ -31222,13 +31222,14 @@
 	        var lifeChange2 = Number(v4);
 	        var life1 = this.props.teams[v1]['life'] + lifeChange1;
 	        var life2 = this.props.teams[v2]['life'] + lifeChange2;
+	        var jail2 = life2 === 0 ? 'needed' : this.props.teams[v2]['jail'];
 	        var moneyChange1 = Number(v4.charAt(1)) * this.props.teams[v2]['hunted'] / 3;
 	        var money1 = this.props.teams[v1]['money'] + moneyChange1;
 	        var kill1 = this.props.teams[v1]['kill'] + 1;
 	        var death2 = this.props.teams[v2]['death'] + 1;
 	        var earned1 = this.props.teams[v1]['earned'] + moneyChange1;
 	        var newData1 = { 'life': life1, 'money': money1, 'kill': kill1 };
-	        var newData2 = { 'life': life2, 'death': death2 };
+	        var newData2 = { 'life': life2, 'death': death2, 'jail': jail2 };
 
 	        var res = [_react2.default.createElement(
 	          'div',
