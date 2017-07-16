@@ -30793,7 +30793,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".brightTheme {\n  color: #292b2c;\n  background-color: white; \n}\n\n.darkTheme {\n  color: white;\n  background-color: #292b2c;\n}", ""]);
 
 	// exports
 
@@ -31154,18 +31154,27 @@
 	  }
 
 	  _createClass(Island, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {}
-	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      this.tick();
-	      this.timer = setInterval(this.tick, 2000);
+	      //this.tick();
+	      //this.timer = setInterval(this.tick, 2000);
+	      document.body.classList.add(this.props.env.timing === 'daytime' ? 'brightTheme' : 'darkTheme');
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      clearInterval(this.timer);
+	      //clearInterval(this.timer);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      if (this.props.env.timing === 'daytime') {
+	        document.body.classList.add('darkTheme');
+	        document.body.classList.remove('brightTheme');
+	      } else {
+	        document.body.classList.remove('darkTheme');
+	        document.body.classList.add('brightTheme');
+	      }
 	    }
 	  }, {
 	    key: 'tick',
@@ -32102,6 +32111,7 @@
 	          'padding': '2.5%',
 	          'width': '30%',
 	          'textAlign': 'center',
+	          'borderStyle': 'inset',
 	          'borderBottomRightRadius': '0px' },
 	        id: 'formInput3',
 	        placeholder: '+/-?',
@@ -32181,41 +32191,35 @@
 	                value: formSelectValue,
 	                id: 'formSelect'
 	              },
-	              _react2.default.createElement(
-	                'option',
-	                { value: 'kill' },
-	                'kill'
-	              ),
-	              _react2.default.createElement(
+	              this.props.env.timing === 'daytime' ? [_react2.default.createElement(
 	                'option',
 	                { value: 'moneyMarket' },
 	                'money (market)'
-	              ),
-	              _react2.default.createElement(
-	                'option',
-	                { value: 'moneyGarena' },
-	                'money (garena)'
-	              ),
-	              _react2.default.createElement(
-	                'option',
-	                { value: 'occupy' },
-	                'occupy'
-	              ),
-	              _react2.default.createElement(
-	                'option',
-	                { value: 'shutDown' },
-	                'shut down'
-	              ),
-	              _react2.default.createElement(
+	              ), _react2.default.createElement(
 	                'option',
 	                { value: 'purged' },
 	                'purged'
-	              ),
-	              _react2.default.createElement(
+	              ), _react2.default.createElement(
 	                'option',
 	                { value: 'rescue' },
 	                'rescue'
-	              )
+	              )] : [_react2.default.createElement(
+	                'option',
+	                { value: 'kill' },
+	                'kill'
+	              ), _react2.default.createElement(
+	                'option',
+	                { value: 'moneyGarena' },
+	                'money (garena)'
+	              ), _react2.default.createElement(
+	                'option',
+	                { value: 'occupy' },
+	                'occupy'
+	              ), _react2.default.createElement(
+	                'option',
+	                { value: 'shutDown' },
+	                'shut down'
+	              )]
 	            )
 	          )
 	        ),
