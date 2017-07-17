@@ -31162,25 +31162,8 @@
 	  _createClass(Island, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      //this.tick();
-	      //this.timer = setInterval(this.tick, 2000);
-	      document.body.classList.add(this.props.env.timing === 'daytime' ? 'brightTheme' : 'darkTheme');
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      //clearInterval(this.timer);
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      if (this.props.env.timing === 'daytime') {
-	        document.body.classList.add('darkTheme');
-	        document.body.classList.remove('brightTheme');
-	      } else {
-	        document.body.classList.remove('darkTheme');
-	        document.body.classList.add('brightTheme');
-	      }
+	      document.body.style.backgroundColor = this.props.env.timing === 'daytime' ? 'white' : '#292b2c';
+	      document.body.style.color = this.props.env.timing === 'daytime' ? '#292b2c' : 'white';
 	    }
 	  }, {
 	    key: 'tick',
@@ -32063,7 +32046,7 @@
 	        placeholder: '0/3000',
 	        ref: function ref(input) {
 	          _this4.inputValue3 = input;
-	        } })] : [_react2.default.createElement(
+	        } })] : formSelectValue === 'recover' ? '' : [_react2.default.createElement(
 	        'div',
 	        {
 	          className: 'input-group-addon',
@@ -32087,7 +32070,7 @@
 	          _this4.inputValue1 = input;
 	        } })];
 
-	      var showMore = formSelectValue === 'purged' ? '' : formSelectValue === 'kill' ? [_react2.default.createElement(
+	      var showMore = formSelectValue === 'purged' || formSelectValue === 'recover' ? '' : formSelectValue === 'kill' ? [_react2.default.createElement(
 	        'div',
 	        {
 	          className: 'input-group-addon',
@@ -32185,9 +32168,22 @@
 	          'div',
 	          { className: 'row', style: {
 	              'paddingTop': '15px',
+	              'paddingLeft': '15px',
+	              'paddingBottom': '15px',
 	              'backgroundColor': 'white',
 	              'borderTopLeftRadius': '4px',
-	              'borderTopRightRadius': '4px'
+	              'borderTopRightRadius': '4px',
+	              'fontSize': '200%',
+	              'color': 'black',
+	              'borderWidth': '0px'
+	            } },
+	          this.props.env.timing === "daytime" ? "daytime" : "night"
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row', style: {
+	              'paddingTop': '15px',
+	              'backgroundColor': 'white'
 	            } },
 	          _react2.default.createElement(
 	            'div',
@@ -32246,6 +32242,11 @@
 	                'option',
 	                { value: 'shutDown' },
 	                'shut down'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'recover' },
+	                'recover'
 	              )
 	            )
 	          )
