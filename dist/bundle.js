@@ -31945,6 +31945,79 @@
 	                  )];
 	                  this.setState({ showInfo: _res7 });
 	                }
+	                /****************************/
+	                /*****      purged      *****/
+	                /****************************/
+	                else if (this.state.formSelectValue === 'recover') {
+	                    if (this.inputValue1.value === '') return;
+	                    var _v13 = this.inputValue1.value;
+
+	                    var _life = this.props.teams[_v13]['life'];
+	                    var _newData10 = { 'life': 3 };
+	                    var _res8 = [_react2.default.createElement(
+	                      'div',
+	                      { className: 'col-12' },
+	                      _react2.default.createElement(
+	                        'table',
+	                        { className: 'table', style: { 'fontSize': '250%' } },
+	                        _react2.default.createElement(
+	                          'thead',
+	                          null,
+	                          _react2.default.createElement(
+	                            'tr',
+	                            null,
+	                            _react2.default.createElement('th', null),
+	                            _react2.default.createElement(
+	                              'th',
+	                              null,
+	                              'Team ',
+	                              _v13
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'tbody',
+	                          null,
+	                          _react2.default.createElement(
+	                            'tr',
+	                            null,
+	                            _react2.default.createElement(
+	                              'th',
+	                              { scope: 'row' },
+	                              '\u751F\u547D'
+	                            ),
+	                            _react2.default.createElement(
+	                              'td',
+	                              null,
+	                              _life,
+	                              ' \u2192 ',
+	                              3
+	                            )
+	                          )
+	                        )
+	                      )
+	                    ), _react2.default.createElement(
+	                      'button',
+	                      {
+	                        type: 'submit',
+	                        className: 'btn btn-primary',
+	                        style: {
+	                          'fontSize': '250%',
+	                          'padding': '2.5%',
+	                          'marginTop': '2.5%',
+	                          'marginLeft': '80%',
+	                          'width': '18%',
+	                          'alignContent': 'right' },
+	                        onClick: function onClick() {
+	                          _this3.props.modifyTeamData(_newData10, _v13);
+	                          _this3.setState({ showInfo: '' });
+	                          _this3.clearInputValues();
+	                        }
+	                      },
+	                      'apply'
+	                    )];
+	                    this.setState({ showInfo: _res8 });
+	                  }
 	    }
 	  }, {
 	    key: 'render',
@@ -32046,7 +32119,7 @@
 	        placeholder: '0/3000',
 	        ref: function ref(input) {
 	          _this4.inputValue3 = input;
-	        } })] : formSelectValue === 'recover' ? '' : [_react2.default.createElement(
+	        } })] : [_react2.default.createElement(
 	        'div',
 	        {
 	          className: 'input-group-addon',
